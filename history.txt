@@ -1,0 +1,439 @@
+    1  git clone https://github.com/upszot/UTN-FRA_So_Examenes.git
+    2  ls
+    3  ./UTN-FRA_SO_Examenes/202406/script_Precondicion.sh
+    4  ./UTN-FRA_So_Examenes/202406/script_Precondicion.sh 
+    5  source ~/.bashrc
+    6  whoami
+    7  id
+    8  sudo fdisk -l
+    9  sudo fdisk /dev/sdc
+   10  sudo fdisk -l
+   11  sudo fdisk /dev/sdb
+   12  sudo fdisk -l
+   13  pvcreate /dev/sdc1
+   14  sudo pvcreate /dev/sdc1
+   15  sudo pvs
+   16  sudo vgcreate vg_datos /dev/sdc1
+   17  vgs
+   18  sudo vgs
+   19  sudo pvs
+   20  sudo pvcreate /dev/sdb1
+   21  sudo vgcreate vg_datos /dev/sdb1
+   22  sudo vgs
+   23  sudo pvs
+   24  sudo vgs
+   25  sudo vg_create vg_datos /dev/sdb1
+   26  sudo vgcreate vg_datos /dev/sdb1
+   27  sudo vgs
+   28  sudo pvs
+   29  sudo vgextend vg_datos /dev/sdb1
+   30  sudo pvs
+   31  sudo vgs
+   32  sudo fdisk -l
+   33  sudo pvcreate /dev/sdc2
+   34  sudo vgcreate vg_temp /dev/sdc2
+   35  sudo vgs
+   36  sudo pvs
+   37  sudo lvcreate -L +5M vg_datos -n lv_docker
+   38  sudo lvs
+   39  sudo lvcreate -L +1535M vg_datos -n lv_workareas
+   40  sudo lvs
+   41  sudo vgextend vg_datos /dev/sdb1
+   42  sudo lvcreate -L +1535M vg_datos -n lv_workareas
+   43  sudo lvcreate -L +512M vg_temp -n lv_swap
+   44  sudo pvs
+   45  sudo vgs
+   46  sudo lvcreate -L +%100FREE vg_datos -n lv_workareas
+   47  sudo lvcreate -L +100%FREE vg_datos -n lv_workareas
+   48  sudo lvcreate -L +1500M vg_datos -n lv_workareas
+   49  SUDO LVS
+   50  sudo lvs
+   51  sudo lvcreate -L +500M vg_team -n lv_swap
+   52  sudo lvcreate -L +500M vg_temp -n lv_swap
+   53  sudo lvs
+   54  mkfs.ext4 /dev/mapper/vg_datos-lv_docker 
+   55  sudo mkfs.ext4 /dev/mapper/vg_datos-lv_docker 
+   56  sudo mkfs.ext4 /dev/mapper/vg_datos-lv_workareas 
+   57  sudo mkswap /dev/mapper/vg_temp-lv_swap
+   58  sudo swapon -s
+   59  sudo swapon /dev/mapper/vg_temp-lv_swap
+   60  sudo swapon -s
+   61  mkdir /work
+   62  sudo mkdir /work
+   63  sudo mount /dev/mapper/vg_datos-lv_workareas /work
+   64  sudo systemctl enable --now docker
+   65  sudo systemctl status docker
+   66  sudo usermod -aG docker $(whoami)
+   67  sudo ls -l /var/lib/docker/
+   68  sudo mount /dev/mapper/vg_datos-lv_docker /var/lib/docker/
+   69  sudo ls -l /var/lib/docker/
+   70  sudo systemctl restart docker
+   71  sudo systemctl status docker
+   72  df -h /var/lib/docker
+   73  history
+   74  history > ~/RTA_Examen_20240624/Punto_A.sh 
+   75  history > ~/RTA_Examen_20240624/Punto_A.txt
+   76  sudo vim /usr/local/bin/GattoAltaUser-Groups.sh
+   77  vim /usr/local/bin/GattoAltaUser-Groups.sh
+   78  sudo vim /usr/local/bin/GattoAltaUser-Groups.sh
+   79  sudo ./usr/local/bin/GattoAltaUser-Groups.sh UTN-FRA_So_Examenes/202406/bash_script/Lista_Usuarios.txt
+   80  sudo ./GattoAltaUser-Groups.sh UTN-FRA_So_Examenes/202406/bash_script/Lista_Usuarios.txt 
+   81  id
+   82  sudo ./GattoAltaUser-Groups.sh
+   83  cd /usr/local/bin
+   84  ls -l
+   85  cd
+   86  ./usr/local/bin/GattoAltaUser-Groups.sh
+   87  cd /usr/local/bin
+   88  ls -l
+   89  .GattoAltaUser-Groups.sh
+   90  cd
+   91  GattoAltaUser-Groups.sh 
+   92  sudo GattoAltaUser-Groups.sh 
+   93  sudo GattoAltaUser-Groups.sh UTN-FRA_So_Examenes/202406/bash_script/Lista_Usuarios.txt 
+   94  sudo usermod -aG wheel cgatto
+   95  GattoAltaUser-Groups.sh
+   96  sudo GattoAltaUser-Groups.sh
+   97  logout
+   98  vim sudo vim /usr/local/bin/GattoAltaUser-Groups.sh
+   99  vim,
+  100  vim
+  101  sudo vim /usr/local/bin/GattoAltaUser-Groups.sh
+  102  cd /usr/local/bin/
+  103  GattoAltaUser-Groups.sh
+  104  sudo GattoAltaUser-Groups.sh
+  105  sudo su
+  106  cd
+  107  history
+  108  history | sed -n '76, 106'
+  109  history | sed -n '76,106p'
+  110  history | sed -n '76,106p' > RTA_Examen_20240624/Punto_B.sh 
+  111  history | sed -n '76,106p' > RTA_Examen_20240624/Punto_B.txt
+  112  cd UTN-FRA_So_Examenes/202406/docker/
+  113  FROM nginx:alpine
+  114  vim docker
+  115  docker build -t web1-Gatto .
+  116  sudo docker build -t web1-Gatto .
+  117  sudo docker build -t web1-gatto:1 .
+  118  docker images
+  119  sudo docker images
+  120  sudo vim docker 
+  121  sudo docker build -t web1-gatto:1 .
+  122  sudo vim docker 
+  123  sudo docker build -t web1-gatto:1 .
+  124  sudo docker images
+  125  sudo vim docker 
+  126  sudo docker images
+  127  sudo docker build -t web1-gatto:1 .
+  128  sudo docker build -t web1-gatto .
+  129  mv docker DockerFile
+  130  sudo vim docker 
+  131  sudo vim DockerFile 
+  132  sudo docker build -t web1-gatto .
+  133  mv DockerFile Dockerfile
+  134  sudo docker build -t web1-gatto .
+  135  df -h
+  136  docker images
+  137  sudo docker images
+  138  sudo systemctl restart docker
+  139  sudo lvextend -l +100%FREE /dev/mapper/vg_datos-lv_docker
+  140  df -h
+  141  sudo docker build -t web1-gatto .
+  142  df -h
+  143  sudo lvdisplay /dev/mapper/vg_datos-lv_docker
+  144  sudo resize2fs /dev/mapper/vg_datos-lv_docker
+  145  df -h
+  146  sudo docker build -t web1-gatto .
+  147  docker images
+  148  df -h
+  149  ls -l
+  150  sudo resize2fs /dev/mapper/vg_datos-lv_docker
+  151  sudo resize2fs /dev/mapper/vg_datos-lv_docker 1G
+  152  docker images
+  153  sudo docker images
+  154  history
+  155  history | sed -n '112,153p' > RTA_Exa
+  156  cd
+  157  history | sed -n '112,153p' > RTA_Examen_20240624/Punto_C.sh 
+  158  history | sed -n '112,153p' > RTA_Examen_20240624/Punto_C.txt
+  159  cd UTN-FRA_So_Examenes/202406/ansible/
+  160  mkdir -p /tmp/2do_parcial/{alumno,equipo}
+  161  ls
+  162  tree
+  163  tree /tmp/2dp_parcial
+  164  tree /tmp
+  165  sudo vim playbook.yml 
+  166  vim datos_alumnos.txt
+  167  vim datos_equipo.txt
+  168  cd
+  169  cd UTN-FRA_So_Examenes/20240
+  170  cd UTN-FRA_So_Examenes/202406
+  171  git add .
+  172  git commit -m "segundo parcial"
+  173  git config --global user.email "catrielgatto99@gmail.com"
+  174  git config --global user.name "catriel"
+  175  git commit -m "segundo parcial"
+  176  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  177  history
+  178  history | sed -n '160,176p' > RTA_Ex
+  179  cd
+  180  history | sed -n '160,176p' > RTA_Examen_20240624/Punto_D.sh 
+  181  history | sed -n '160,176p' > RTA_Examen_20240624/Punto_D.txt
+  182  cd UTN-FRA_So_Examenes/202406
+  183  git clone https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  184  git add .
+  185  git status
+  186  git add .
+  187  git commit -m "test"
+  188  git add
+  189  git add .
+  190  ls
+  191  git add *
+  192  git init
+  193  git status
+  194  git add .
+  195  cd
+  196  cd UTN-FRA_So_Examenes/202406
+  197  git status
+  198  git init
+  199  git add .
+  200  git commit -m "test2"
+  201  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  202  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  203  git push -u origin main
+  204  git status
+  205  git add .
+  206  pwd
+  207  git init
+  208  cd UTNFRA_SO_2do_Parcial_Gatto/
+  209  git status
+  210  git checkout main
+  211  git add .
+  212  git commit -m "parcial"
+  213  git add .
+  214  git push origin main
+  215  cd
+  216  ssh-keygen -t ed25519 -C "catrielgatto99@gmail.com"
+  217  ls -la
+  218  cd .ssh/
+  219  ls 
+  220  ls -l
+  221  cat id_ed25519.pub
+  222  git status
+  223  cd
+  224  cd UTN-FRA_So_Examenes/202406
+  225  git status
+  226  git add .
+  227  git status
+  228  git add .
+  229  git init
+  230  cd
+  231  cd UTN-FRA_So_Examenes/
+  232  git init
+  233  cd 202406
+  234  git add .
+  235  git branch
+  236  git status
+  237  git branch
+  238  git checkout -b main
+  239  git add .
+  240  rm -rf .git
+  241  git init
+  242  git add .
+  243  rm -rf .git
+  244  git status
+  245  git add UTNFRA_SO_2do_Parcial_Gatto/
+  246  git log
+  247  rm -f .git/index
+  248  git reset
+  249  git status
+  250  git branch
+  251  git checkout -b main
+  252  rm -f .git/index
+  253  git reset
+  254  git add .
+  255  rm UTNFRA_SO_2do_Parcial_Gatto/
+  256  rm -rf UTNFRA_SO_2do_Parcial_Gatto
+  257  git status
+  258  git add .
+  259  git commit -m "test"
+  260  git push ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII7LH/Fuz87D6PgVcOhfQI8UN5TkZQ93riFCVnnIdOgh catrielgatto99@gmail.com
+  261  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  262  git status
+  263  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  264  cd
+  265  cd .ssh/
+  266  ls -la
+  267  cat id_ed25519.pub
+  268  vim id_ed25519.pub
+  269  cd
+  270  cd .ssh/
+  271  ssh-keygen -t rsa -C "catriel"
+  272  ls -la
+  273  cat catriel.pub
+  274  cd UTN-FRA_So_Examenes/
+  275  cd 202406/
+  276  git status
+  277  git init
+  278  git add .
+  279  git commit -m "test"
+  280  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  281  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  282  git config --global user.email "catrielgatto@gmail.com"
+  283  git config user.email
+  284  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  285  cd
+  286  cd .ssh/
+  287  cd
+  288  cd ~/.ssh
+  289  ssh-keygen -t ed25519 -C "catrielgatto@gmail.com"
+  290  cd
+  291  cd .ssh/
+  292  ls -la
+  293  cat catriel_clave.pub 
+  294  cd
+  295  cd UTN-FRA_So_Examenes/202406/
+  296  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  297  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  298  sudo vim config
+  299  cd
+  300  cd .ssh/
+  301  vim config
+  302  ssh -T git@github.com
+  303  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  304  cd
+  305  cd UTN-FRA_So_Examenes/202406/
+  306  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  307  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  308  git status
+  309  git clone https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  310  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  311  cd UTN-FRA_So_Examenes/202406/
+  312  git status
+  313  git add .
+  314  git commit -m "init"
+  315  git status
+  316  git push
+  317  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  318  git remote add UTNFRA_SO_2do_Parcial_Gatto https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  319  git remote add UTNFRA_SO_2do_Parcial_Gatto https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  320  git status
+  321  git push UTNFRA_SO_2do_Parcial_Gatto 
+  322  git push UTNFRA_SO_2do_Parcial_Gatto master
+  323  sudo su
+  324  cd
+  325  cd .ssh/
+  326  vim config 
+  327  ls -la
+  328  vim config 
+  329  ssh-add catriel_clave.pub
+  330  ssh-add catriel_clave
+  331  cd
+  332  cd UTN-FRA_So_Examenes/202406/
+  333  git status
+  334  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  335  git remote -v
+  336  ssh seek-coder@github
+  337  ssh git@github
+  338  ssh git@github.com
+  339  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git}
+  340  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  341  sudo git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  342  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  343  git config -l
+  344  git user.name seek-coder
+  345  git config --global user.name seek-coder
+  346  git config -l
+  347  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  348  git clone https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  349  git config --global credential.helper cache
+  350  git pull -v
+  351  git status
+  352  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  353  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  354  git merge https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  355  git remote add origin https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  356  git push -u origin https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  357  git push
+  358  git push -u origin main
+  359  git push -u origin master
+  360  cd UTN-FRA_So_Examenes/
+  361  cd 202406
+  362  ls -la
+  363  ls
+  364  git status
+  365  git add .
+  366  git commit -m "init"
+  367  git push -u origin main
+  368  git push -u origin master
+  369  git config --global credential.helper store
+  370  git pull
+  371  git pull master
+  372  git pull https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  373  git pull https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  374  git pull https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git main
+  375  git push -u origin master
+  376  git push
+  377  git push --set-upstream origin master
+  378  git push
+  379  git credential-manager
+  380  git credential-cache
+  381  git credential-manager get
+  382  git credential reject
+  383  git config --global credential.helper 
+  384  git push
+  385  git branch -vv
+  386  git push --set-upstream origin master
+  387  git status
+  388  cd
+  389  cd /Repo
+  390  cd Repo
+  391  cd
+  392  cd Repo/
+  393  git status
+  394  git init
+  395  git add .
+  396  git commit -m "init"
+  397  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  398  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  399  git clone https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  400  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  401  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  402  git clone https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  403  git clone https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  404  ls 
+  405  git merge https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  406  git push
+  407  git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  408  sudo git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  409  git push origin master
+  410  git init
+  411  git push origin master
+  412  git push
+  413  git remote add repo https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git master
+  414  git remote add repo https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  415  git push repo
+  416  git push repo master
+  417  sudo git push repo master
+  418  git config --global credential.helper store
+  419  sudo git push repo master
+  420  cd
+  421  cd /Repo
+  422  cd Repo/
+  423  ls -l
+  424  sudo git push https://github.com/seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  425  cd
+  426  cd .ssh/
+  427  ls -l
+  428  git push git@github.com:seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  429  git remote set-url origin git@github.com:seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  430  sudo git push git@github.com:seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  431  git push git@github.com:seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  432  cd
+  433  cd Repo/
+  434  git push git@github.com:seek-coder/UTNFRA_SO_2do_Parcial_Gatto.git
+  435  $HOME/.bash_history
+  436  sudo $HOME/.bash_history
+  437  history -a
+  438  history
+  439  history > history.txt
